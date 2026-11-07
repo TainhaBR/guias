@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Celular Sem Medo | Direito No Bolso</title>
+<style>html, body { margin: 0; background: #FFFDF5; }</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: placa de aviso amarela (como a capa) em coluna única para celular; blocos se alternam entre amarelo, branco e marinho. */
+.dnb {
+  --amarelo: #FFCC00;
+  --marinho: #14213D;
+  --vermelho: #C81E1E;
+  --verde: #1E7D3C;
+  --papel: #FFFDF5;
+  --tinta: #1B2233;
+  --cinza: #5A5F6B;
+  --display: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --corpo: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+.dnb { background: var(--papel); color: var(--tinta); font-family: var(--corpo); font-size: 20px; line-height: 1.55; }
+.faixa { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.miolo { max-width: 620px; margin: 0 auto; }
+h1, h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: 1.05; text-wrap: balance; margin: 0; letter-spacing: .01em; }
+h2 { font-size: 1.6rem; color: var(--marinho); }
+p { margin: 0; }
+.zebra { height: 22px; background: repeating-linear-gradient(-45deg, var(--marinho) 0 16px, var(--amarelo) 16px 32px); }
+
+/* topo */
+.topo { background: var(--marinho); color: var(--amarelo); text-align: center; font-weight: 700; letter-spacing: .14em; font-size: .8rem; padding-block: 10px; }
+
+/* abertura */
+.abertura { background: var(--amarelo); padding-block: 26px 34px; }
+.abertura .miolo { display: grid; gap: 18px; }
+.selo { justify-self: start; background: var(--vermelho); color: #fff; font-weight: 700; letter-spacing: .08em; font-size: .85rem; padding: 6px 12px; border-radius: 4px; }
+h1 { font-size: clamp(2.6rem, 13vw, 4rem); color: var(--marinho); }
+.lead { font-size: 1.2rem; font-weight: 700; color: var(--marinho); }
+.capa { display: block; width: 78%; max-width: 360px; margin: 6px auto 0; border: 4px solid var(--marinho); box-shadow: 10px 10px 0 var(--marinho); transform: rotate(-1.5deg); }
+
+/* compra */
+.compra { display: grid; gap: 10px; text-align: center; }
+.preco { font-family: var(--display); font-size: 3rem; color: var(--marinho); line-height: 1; }
+.preco small { font-family: var(--corpo); font-size: 1.1rem; font-weight: 700; display: block; margin-bottom: 4px; color: var(--marinho); }
+.botao { display: block; background: var(--verde); color: #fff; text-decoration: none; font-family: var(--display); font-size: 1.35rem; text-transform: uppercase; padding: 20px 16px; border-radius: 10px; box-shadow: 0 6px 0 #135228; letter-spacing: .02em; }
+.botao:active { transform: translateY(4px); box-shadow: 0 2px 0 #135228; }
+.botao:focus-visible { outline: 4px solid var(--marinho); outline-offset: 3px; }
+.confianca { font-size: .95rem; color: var(--marinho); font-weight: 700; }
+
+/* mensagens */
+.mensagens { background: #fff; padding-block: 38px; }
+.mensagens .miolo { display: grid; gap: 14px; }
+.balao { background: #E7F3E3; border-radius: 4px 18px 18px 18px; padding: 12px 16px; max-width: 88%; font-size: 1.1rem; box-shadow: 0 1px 0 #c9d9c4; }
+.balao span { display: block; font-size: .75rem; color: var(--cinza); text-align: right; margin-top: 2px; }
+.veredito { margin-top: 8px; border-left: 8px solid var(--vermelho); padding: 6px 0 6px 14px; font-weight: 700; font-size: 1.2rem; }
+.veredito b { color: var(--vermelho); }
+
+/* conteúdo */
+.dentro { padding-block: 38px; }
+.dentro .miolo { display: grid; gap: 18px; }
+.lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.lista li { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; }
+.lista svg { width: 30px; height: 30px; margin-top: 1px; }
+
+/* páginas */
+.paginas { background: var(--marinho); color: #fff; padding-block: 38px; }
+.paginas h2 { color: var(--amarelo); }
+.paginas .miolo { display: grid; gap: 16px; }
+.paginas p { color: #E6E9F2; }
+.grade { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grade img { width: 100%; display: block; border-radius: 4px; border: 3px solid var(--amarelo); }
+
+/* vantagens */
+.facil { padding-block: 38px; }
+.facil .miolo { display: grid; gap: 16px; }
+.cartoes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cartao { background: #fff; border: 3px solid var(--marinho); border-radius: 8px; padding: 14px; display: grid; gap: 4px; align-content: start; }
+.cartao strong { font-family: var(--display); font-weight: 400; text-transform: uppercase; color: var(--marinho); font-size: 1rem; line-height: 1.15; }
+.cartao span { font-size: 1rem; line-height: 1.4; }
+
+/* oferta final */
+.oferta { background: var(--amarelo); padding-block: 34px 38px; }
+.oferta .miolo { display: grid; gap: 16px; }
+.garantia { display: grid; grid-template-columns: 70px 1fr; gap: 14px; align-items: center; background: var(--papel); border: 3px solid var(--marinho); border-radius: 8px; padding: 14px; }
+.garantia .sete { width: 70px; height: 70px; border-radius: 50%; background: var(--marinho); color: var(--amarelo); display: grid; place-items: center; text-align: center; font-family: var(--display); font-size: 1.7rem; line-height: .9; }
+.garantia .sete small { font-size: .55rem; display: block; }
+
+/* perguntas */
+.perguntas { padding-block: 38px; }
+.perguntas .miolo { display: grid; gap: 12px; }
+details { background: #fff; border: 2px solid #D9D3BC; border-radius: 8px; padding: 0 16px; }
+summary { cursor: pointer; font-weight: 700; padding: 16px 0; color: var(--marinho); list-style: none; display: grid; grid-template-columns: 1fr 28px; gap: 8px; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--display); font-size: 1.6rem; color: var(--vermelho); text-align: center; }
+details[open] summary::after { content: "−"; }
+summary:focus-visible { outline: 3px solid var(--marinho); outline-offset: 2px; }
+details p { padding-bottom: 16px; }
+
+footer { background: var(--marinho); color: #C9CFDD; font-size: .9rem; padding-block: 26px 34px; }
+footer .miolo { display: grid; gap: 8px; }
+footer strong { color: var(--amarelo); letter-spacing: .1em; }
+@media (prefers-reduced-motion: reduce) { .capa { transform: none; } }
+.dnb { margin: 0; } .dnb img { max-width: 100%; }
+</style>
+<div class="dnb">
+
+<div class="topo faixa">DIREITO NO BOLSO</div>
+<div class="zebra" aria-hidden="true"></div>
+
+<section class="abertura faixa">
+  <div class="miolo">
+    <span class="selo">ANDROID E IPHONE EM LETRA GRANDE</span>
+    <h1>Celular sem medo</h1>
+    <p class="lead">O passo a passo para usar o celular sozinho, com calma e com segurança, sem precisar pedir ajuda.</p>
+    <img class="capa" src="https://static-public.pages.hotmart.com/uploads/media/file/10968726/celular-sem-medo-capa.jpg" alt="Capa do guia Celular sem medo">
+    <div class="compra" style="margin-top:22px">
+      <p class="preco"><small>Hoje, por apenas</small>R$ 9,90</p>
+      <a class="botao" id="comprar-topo" href="#oferta">Quero o meu guia</a>
+      <p class="confianca">Pix, boleto ou cartão · Garantia de 7 dias</p>
+    </div>
+  </div>
+</section>
+
+<section class="mensagens faixa">
+  <div class="miolo">
+    <h2>Já ouviu isso em casa?</h2>
+    <p class="balao">Mãe, já te expliquei isso três vezes.</p>
+    <p class="balao">Pai, não é aí, é no outro botão.</p>
+    <p class="balao">Depois eu te ensino, agora tô sem tempo.</p>
+    <p class="veredito"><b>Com este guia você aprende no seu tempo</b>, com o celular na mão, um capítulo por dia.</p>
+  </div>
+</section>
+
+<section class="dentro faixa">
+  <div class="miolo">
+    <h2>O que tem dentro</h2>
+    <ul class="lista">
+      <li><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#1E7D3C"/><path d="M8 15.5l4.5 4.5L22 10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Os botões e os <b>toques na tela</b>, sem medo de errar</span></li>
+      <li><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#1E7D3C"/><path d="M8 15.5l4.5 4.5L22 10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Deixar a <b>letra maior</b> e o toque mais alto</span></li>
+      <li><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#1E7D3C"/><path d="M8 15.5l4.5 4.5L22 10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Salvar contatos, usar o <b>viva-voz</b> e bloquear número chato</span></li>
+      <li><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#1E7D3C"/><path d="M8 15.5l4.5 4.5L22 10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>WhatsApp</b>: áudio, chamada de vídeo, foto e como proteger a conta</span></li>
+      <li><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#1E7D3C"/><path d="M8 15.5l4.5 4.5L22 10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tirar <b>foto</b>, fazer print e não perder suas fotos</span></li>
+      <li><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#1E7D3C"/><path d="M8 15.5l4.5 4.5L22 10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Falar em vez de digitar</b> e usar o assistente de voz</span></li>
+      <li><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#1E7D3C"/><path d="M8 15.5l4.5 4.5L22 10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Instalar aplicativos com <b>segurança</b></span></li>
+      <li><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="6" fill="#1E7D3C"/><path d="M8 15.5l4.5 4.5L22 10" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Pix</b> com cuidado e o que fazer se perder o celular</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="paginas faixa">
+  <div class="miolo">
+    <h2>Veja por dentro</h2>
+    <p>Letra grande, frases curtas e cores que avisam o perigo. Estas são páginas de verdade do guia.</p>
+    <div class="grade">
+      <img src="https://static-public.pages.hotmart.com/uploads/media/file/10968720/celular-sem-medo-p1.jpg" alt="Página do sumário">
+      <img src="https://static-public.pages.hotmart.com/uploads/media/file/10968732/celular-sem-medo-p2.jpg" alt="Tabela dos toques na tela">
+      <img src="https://static-public.pages.hotmart.com/uploads/media/file/10968722/celular-sem-medo-p3.jpg" alt="Caminho para aumentar a letra no Android e no iPhone">
+      <img src="https://static-public.pages.hotmart.com/uploads/media/file/10968721/celular-sem-medo-p4.jpg" alt="Página sobre o WhatsApp">
+    </div>
+  </div>
+</section>
+
+<section class="facil faixa">
+  <div class="miolo">
+    <h2>Feito para ler sem esforço</h2>
+    <div class="cartoes">
+      <div class="cartao"><strong>Letra grande</strong><span>Espaçada, para ler sem óculos de grau forte.</span></div>
+      <div class="cartao"><strong>Toque e vá</strong><span>Toque no capítulo e o guia pula direto para ele.</span></div>
+      <div class="cartao"><strong>Para marcar</strong><span>Listas e campos para preencher no próprio celular.</span></div>
+      <div class="cartao"><strong>Dá para imprimir</strong><span>Leia no celular ou no papel.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="oferta faixa" id="oferta">
+  <div class="miolo">
+    <h2>Comece hoje, no seu tempo</h2>
+    <div class="compra">
+      <p class="preco"><small>Guia completo em PDF</small>R$ 9,90</p>
+      <a class="botao" id="comprar-fim" href="#oferta">Quero o meu guia</a>
+      <p class="confianca">Pix, boleto ou cartão · Você recebe por e-mail</p>
+    </div>
+    <div class="garantia">
+      <div class="sete">7<small>DIAS</small></div>
+      <p><b>Garantia de 7 dias.</b> Se não gostar, peça o seu dinheiro de volta pela Hotmart, sem precisar explicar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="perguntas faixa">
+  <div class="miolo">
+    <h2>Perguntas comuns</h2>
+    <details><summary>Como eu recebo o guia?</summary><p>Depois do pagamento, a Hotmart manda o acesso para o seu e-mail. Com Pix ou cartão, chega na hora. Com boleto, chega quando o banco confirmar o pagamento, o que pode levar alguns dias úteis.</p></details>
+    <details><summary>Funciona no meu celular?</summary><p>Sim. É um arquivo PDF, que abre em qualquer celular, Android ou iPhone, e também no computador. Para marcar os quadradinhos, o guia ensina a abrir no Adobe Acrobat Reader, que é grátis.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias para pedir o dinheiro de volta pela própria Hotmart.</p></details>
+    <details><summary>É seguro pagar aqui?</summary><p>O pagamento é feito pela Hotmart, uma das maiores plataformas de produtos digitais do Brasil. Nós não vemos os dados do seu cartão.</p></details>
+    <details><summary>Posso dar de presente?</summary><p>Pode. Muita gente compra para os pais e avós. É só encaminhar o arquivo para eles ou imprimir.</p></details>
+  </div>
+</section>
+
+<div class="zebra" aria-hidden="true"></div>
+<footer class="faixa">
+  <div class="miolo">
+    <strong>DIREITO NO BOLSO</strong>
+    <p>Material informativo. Os nomes dos menus podem variar conforme a marca e a versão do celular.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>
