@@ -213,5 +213,9 @@ footer strong { color: var(--amarelo); letter-spacing: .1em; }
   </div>
 </footer>
 </div>
+<script>(function(){var q=new URLSearchParams(location.search),s=q.get('src');
+if(!s&&q.get('hsrc')){try{s=atob(q.get('hsrc'))}catch(e){}}if(!s)return;s=s.replace(/[^\w-]/g,'');
+document.querySelectorAll('a.botao[href*="pay.hotmart.com"]').forEach(function(a){
+a.href+=(a.href.indexOf('?')<0?'?':'&')+'src='+encodeURIComponent(s)})})();</script>
 </body>
 </html>
